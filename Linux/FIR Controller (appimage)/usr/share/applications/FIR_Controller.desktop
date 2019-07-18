@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=FIR Controller
+Comment=Controller for FIR filter based on RedPitaya
+Exec=firgui
+Icon=firgui
+Categories=Education;
+Name[en]=FIR_Controller
