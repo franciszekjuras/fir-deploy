@@ -1,0 +1,21 @@
+$Params = @{    
+Subject           = "CN=Franciszek Juras"
+Type              = "CodeSigningCert"    
+KeySpec           = "Signature"     
+KeyUsage          = "DigitalSignature"    
+FriendlyName      = "My code signing certificate"    
+NotAfter          = [datetime]::now.AddYears(5)    
+CertStoreLocation = 'Cert:\CurrentUser\My' }
+
+$mycert = New-SelfSignedCertificate @Params
+
+Export-Certificate -FilePath exported_cert.cer -Cert $mycert
+Import-Certificate -FilePath exported_cert.cer -CertStoreLocation Cert:\CurrentUser\root
+
+#Jeżli mamy już certyfikat, trzeba wybrać odpowiedni thumbprint
+ls cert:\currentuser\root
+# I następnie podać ścieżkę:
+$mycert = gci Cert:\CurrentUser\root\C5280925B5991CF6186AF16B223F6
+62072ADE1D9
+
+Set-AuthenticodeSignature -Certificate $mycert -FilePath "Fir Controller.exe"

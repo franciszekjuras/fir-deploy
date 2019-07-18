@@ -1,0 +1,11 @@
+How to deploy:
+1. Add to your system PATH (search: edit the system environment variables) Qt bin directory 
+(make sure it's the same version that was used during compilation). Example: "C:\Qt\Qt5.7.1\5.7\msvc2015\bin".
+2. Open powershell and go to the folder where you want to deploy application.
+3. Copy compiled executable firgui.exe into that folder.
+4. Run:
+windeployqt.exe --no-system-d3d-compiler --no-opengl-sw firgui.exe
+5. Now copy all dlls from win32/lib folder in application source directory.
+6. Make sure that the folder contains data directory (with bitstreams and redpitaya directories) and extras directory.
+7. Change firgui.exe to "Fir Controller.exe".
+8. Sign the executable following instructions in "Code signing.txt".
