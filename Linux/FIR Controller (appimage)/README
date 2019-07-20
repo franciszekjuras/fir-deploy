@@ -1,4 +1,10 @@
+0. On older KDE desktop you might need to add (before compilation):
+
+[Development]
+AutoCheckAccelerators=false
+
+to ~/.config/kdeglobals if ampersands appear in text.
 1. Copy the executable to usr/bin/
-2. Donwload linuxdeployqt appimage, place it in ~/.local/bin and reneme it to linuxdeployqt.
+2. Download linuxdeployqt appimage, place it in ~/.local/bin and reneme it to linuxdeployqt. Make it executable (chmod a+x linuxdeployqt)
 3. Run (check if qmake path is set properly):
-linuxdeployqt "usr/share/applications/FIR_Controller.desktop" -appimage -bundle-non-qt-libs -verbose=1 -no-copy-copyright-files -qmake=/usr/lib/qt5/bin/qmake -extra-plugins=platformthemes,styles -unsupported-allow-new-glibc
+linuxdeployqt "usr/share/applications/FIR_Controller.desktop" -appimage -bundle-non-qt-libs -verbose=1 -no-copy-copyright-files -extra-plugins=platformthemes,styles -qmake=/usr/lib/qt5/bin/qmake -unsupported-allow-new-glibc
