@@ -13,9 +13,8 @@ Export-Certificate -FilePath exported_cert.cer -Cert $mycert
 Import-Certificate -FilePath exported_cert.cer -CertStoreLocation Cert:\CurrentUser\root
 
 #Jeżli mamy już certyfikat, trzeba wybrać odpowiedni thumbprint
-ls cert:\currentuser\root
+ls cert:\currentuser\my
 # I następnie podać ścieżkę:
-$mycert = gci Cert:\CurrentUser\root\C5280925B5991CF6186AF16B223F6
-62072ADE1D9
+$cert = get-item Cert:\CurrentUser\my\<thumbprint,np.C5280925B5991CF6186AF16B223F662072ADE1D9>
 
-Set-AuthenticodeSignature -Certificate $mycert -FilePath "Fir Controller.exe"
+Set-AuthenticodeSignature -Certificate $cert -FilePath "Fir Controller.exe"
