@@ -15,6 +15,10 @@ Import-Certificate -FilePath exported_cert.cer -CertStoreLocation Cert:\CurrentU
 #Jeżli mamy już certyfikat, trzeba wybrać odpowiedni thumbprint
 ls cert:\currentuser\my
 # I następnie podać ścieżkę:
-$cert = get-item Cert:\CurrentUser\my\<thumbprint,np.C5280925B5991CF6186AF16B223F662072ADE1D9>
+$cert = get-item Cert:\CurrentUser\my\<thumbprint>,np.C5280925B5991CF6186AF16B223F662072ADE1D9>
 
-Set-AuthenticodeSignature -Certificate $cert -FilePath "Fir Controller.exe"
+Set-AuthenticodeSignature -Certificate $cert -FilePath "Fir Controller.exe"  Set-AuthenticodeSignature -Certificate $cert -FilePath "Fir Controller.exe" -TimestampServer "http://timestamp.verisign.com/scripts/timstamp.dll"
+
+If timestam server doesn't work, look at
+https://gist.github.com/Manouchehri/fd754e402d98430243455713efada710
+or just search timestamp server on google
