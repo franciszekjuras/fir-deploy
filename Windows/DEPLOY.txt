@@ -6,5 +6,7 @@ How to deploy:
 4. Run:
 windeployqt.exe --no-system-d3d-compiler --no-opengl-sw --no-translations "FIR Controller.exe"
 5. Now copy all dlls (no need for .lib and .exp) from win32/lib folder in application source directory.
-6. Copy data directory from "Commons" directory.
+6. Build and copy updater executable.
 7. Sign the executable following instructions in "Code signing.txt".
+
+!!! DO NOT copy data directory into application archive. This should be distributed separately. !!!
