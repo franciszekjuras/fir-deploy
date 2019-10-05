@@ -6,6 +6,5 @@ How to deploy:
 4. Run:
 windeployqt.exe --no-system-d3d-compiler --no-opengl-sw firgui.exe
 5. Now copy all dlls from win32/lib folder in application source directory.
-6. Copy data and extras directory from "Commons" directory.
-7. Change firgui.exe to "Fir Controller.exe".
-8. Sign the executable following instructions in "Code signing.txt".
+6. Copy data directory from "Commons" directory.
+7. Sign the executable following instructions in "Code signing.txt".

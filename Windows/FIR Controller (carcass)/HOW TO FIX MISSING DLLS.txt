@@ -1,0 +1,5 @@
+Find vc_redist.x86.exe in extras folder and run to install Microsoft Visual C++ Redistributable
+You can also download them from Microsoft sie:
+https://aka.ms/vs/16/release/vc_redist.x86.exe
+If for some reasone link expires, just search "visual c++ redistributable" in Google.
+Look for results on Microsoft site and make sure you choose x86 (32-bit) version.
