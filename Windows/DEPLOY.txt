@@ -6,7 +6,9 @@ How to deploy:
 4. Run:
 windeployqt.exe --no-system-d3d-compiler --no-opengl-sw --no-translations "FIR Controller.exe"
 5. Now copy all dlls (no need for .lib and .exp) from win32/lib folder in application source directory.
-6. Build and copy updater executable.
-7. Sign the executable following instructions in "Code signing.txt".
+6. Copy Windows runtime libraries from Windows/SysWOW64 if you compiled 32-bit executable, or Windows/System32 in case of 64-bit executable
+(i.e. msvcp140.dll, vcomp140.dll, vcruntime140.dll, where number depends on Visual Studio version used (in this case 2015-2019)). If you're not sure run executable on fresh Windows on virtual machine and see errors or use dependency walker.
+7. Build and copy updater executable.
+8. Sign the executable following instructions in "Code signing.txt".
 
 !!! DO NOT copy data directory into application archive. This should be distributed separately. !!!

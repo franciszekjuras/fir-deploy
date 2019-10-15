@@ -1,5 +1,3 @@
-If application fails to run update your system or install Visual C++ Redistributable from Microsoft.
-
 In order to connect with Red Pitaya it must be either connected to the same local network as your computer or connected dirrectly with ethernet cable.
 In case of direct connection you must complete additional steps depending on your operating system:
 > Windows 10 - no steps required
